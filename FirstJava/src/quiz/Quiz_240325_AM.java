@@ -9,9 +9,8 @@ import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
-
 import util1.Closer;
-
+	
 
 	class phoneBook{
 		// HashMap을 이용해 전화번호부를 구현해보세요   
@@ -20,14 +19,14 @@ import util1.Closer;
 		// 3. 그룹의 HashMap에 전화번호를 키값으로 넣으면 이름이 나온다
 		HashMap<String, HashMap<String, String>> phoneBook;
 		
-		File saveFile = null;
-		String savePath = "saveFile\\phoneBook.sav";
+		File saveFile = null;	//파일 객체 생성
+		String savePath = "saveFile\\phoneBook.sav";	//path 저장 위치 설정
 			
 		public phoneBook() {
 			// 객체 생성 시 파일에 저장된 내용을 불러오는 동작!
 			// 파일이 존재하면 내용을 불러오고,
-			// 존재하지 않다면 파일 및 디렉터리 생성
-			phoneBook = new HashMap<>();
+			// 존재하지 않다면 디렉터리 및 생성
+			phoneBook = new HashMap<>();		// phoneBook HashMap 생성
 			saveFile = new File(savePath);		//파일 객체 생성 - 저장 파일에 대한 작업
 			if(!saveFile.exists()) {
 				File dir = new File(saveFile.getParent());

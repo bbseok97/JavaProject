@@ -72,4 +72,32 @@ public class Student extends Person{
 	public String getDetails() {	//부모 클래스의 제한자 형태보다 큰 형태로 변경해야함
 		return "[이름: " + name + "\t나이: "+ age + "\t학번: " + studentId + "전공: " + major+"]" ;
 	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public 
+	
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	
 }
