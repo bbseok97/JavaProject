@@ -29,6 +29,7 @@ abstract class Shape {	//추상 클래스...
 	
 	private int x;
 	private int y;
+	
 	public Shape() {}	//기본 생성자...
 	public Shape(int x, int y) {
 		this.x = x;

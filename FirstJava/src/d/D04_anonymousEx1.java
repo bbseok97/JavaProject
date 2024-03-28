@@ -3,11 +3,11 @@ import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class D04_anonymouseEx1 {
+public class D04_anonymousEx1 {
 
 	private Frame f;
 	
-	public D04_anonymouseEx1() {
+	public D04_anonymousEx1() {
 		f = new Frame("Anonymous innerClass");
 	}
 	
@@ -34,7 +34,7 @@ public class D04_anonymouseEx1 {
 	
 	
 	public static void main(String[] args) {
-		D04_anonymouseEx1 da = new D04_anonymouseEx1();
+		D04_anonymousEx1 da = new D04_anonymousEx1();
 		da.launchFrame();
 
 	}
