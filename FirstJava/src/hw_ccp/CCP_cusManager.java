@@ -1,18 +1,42 @@
 package hw_ccp;
 
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CCP_cusManager {
 	
+	private static Scanner scan = new Scanner(System.in);
+	
 	public static void main(String[] args) {
+	
+		ArrayList<Customer> list = new ArrayList<Customer>();
 		
-		Scanner scan = new Scanner(System.in);
+		while(true) {
+			System.out.println("[고객 관리 프로그램 메뉴]");
+			System.out.println("1. 고객 정보 저장");
+			System.out.println("2. 고객 정보 조회");
+			System.out.println("3. 고객 정보 수정");
+			System.out.println("4. 고객 정보 삭제");
+			System.out.println("5. 전체 고객 정보 조회");
+			System.out.println("0. 프로그램 종료");
+			
+			int num = scan.nextInt();
+			scan.nextLine();
+			
+			switch(num) {
+			
+			case 1:
+				
+			}
+			
+		}
+		
 		
 	
 	
@@ -61,7 +85,7 @@ class CustomerManager{
 		cus.add(customer);
 	}
 	
-	//	이름으로 고객 조회
+	//	이름으로 고객 정보 조회
 	public Customer findName(String name) {
 		for(Customer customer : cus) {
 			if(customer.getName().equals(name)) {
@@ -101,19 +125,48 @@ class CustomerManager{
 			System.out.println(customer);
 		}
 	}
-	
-	//	고객 정보를 파일에 저장(객체 직렬화를 이용하여)
-	public void saveCus(String filename) {
+
+	//	파일에 데이터 저장(객체 직렬화 사용)
+		
+	public static void fileOutput() { 
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		
 		try {
+			fos = new FileOutputStream("CustomerData.ser");
+			oos = new ObjectOutputStream(fos);
 			
+			oos.writeObject(fos);
+			System.out.println("고객 데이터가 저장되었습니다.");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(oos != null) oos.close();
+			} catch (IOException e2) {}
 		}
 	}
 	
-	
-	
-	
-	
+	public static void fileInput() {
+		FileInputStream fis = null;
+		DataInputStream dis = null;
+		
+		try {
+			fis = new FileInputStream("customer.data");
+			dis = new DataInputStream(fis);
+			
+			String name = null;
+			while((name = dis.readUTF()) != null) {
+				System.out.println(name);
+				System.out.println(dis.readUTF());
+				System.out.println(dis.readInt());
+				System.out.println(dis.readChar());
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {if(dis != null) dis.close();} catch (IOException e2) {}
+		}
+	}
 }
 }
