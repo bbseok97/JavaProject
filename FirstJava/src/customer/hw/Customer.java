@@ -3,14 +3,14 @@ package customer.hw;
 public class Customer {
 	public String name;
 	public String email;
-	public String gender;
+	public char gender;
 	public int birthYear;
 	
 	//	기본 생성자
 	public Customer() {
 	}
 	//	필드 생성자
-	public Customer(String name, String email, String gender, int birthYear) {
+	public Customer(String name, String email, char gender, int birthYear) {
 		this.name = name;
 		this.email = email;
 		this.gender = gender;
@@ -28,10 +28,10 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getGender() {
+	public char getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
+	public void setGender(char gender) {
 		this.gender = gender;
 	}
 	public int getBirthYear() {
