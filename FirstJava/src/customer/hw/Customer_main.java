@@ -56,7 +56,9 @@ public class Customer_main {
 	               int newBirth = scan.nextInt();
 	               
 	               Customer update = new Customer(updateName, newEmail,newGender,newBirth);
-	               
+	               manager.updateInfo(updateName, update);
+	            }else {
+	            	System.out.println("일치하는 고객명이 없습니다.");
 	            }
 	         }
 	         
